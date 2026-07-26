@@ -11,6 +11,9 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Vector store cache (dibuat otomatis oleh app.py saat pertama kali start)
+vectorstore/
+
 # OS files
 .DS_Store
 Thumbs.db
