@@ -1,3 +1,10 @@
+# --- Patch wajib untuk kompatibilitas ChromaDB di Streamlit Community Cloud ---
+# Streamlit Cloud pakai SQLite versi lama, sedangkan ChromaDB butuh SQLite >= 3.35.
+# Baris ini HARUS ada di paling atas, sebelum import lain apa pun.
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 """
 Antarmuka utama sistem multi-agent enterprise, dibangun dengan Streamlit.
 Jalankan: streamlit run app.py
